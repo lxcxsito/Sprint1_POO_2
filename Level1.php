@@ -2,12 +2,16 @@
 
 //TASK 1 
 class Animal{
-    public $nom;
-    public Llenguatge $parlen ;
+    public string $nom;
+    public Llenguatge $so ;
 
-    public function __construct($nom, Llenguatge $parlen){
+    public function __construct($nom, Llenguatge $so){
         $this->nom = $nom;
-        $this->parlen = $parlen;
+        $this->so = $so;
+    }
+
+       public function Parlar() {
+        echo "El " . $this->nom . " fa " . $this->so->nom . "\n";
     }
 
 }
@@ -29,7 +33,8 @@ $ladrar = new Llenguatge("Ladrar");
 $animal1 = new Animal("Gat", $maullar);
 $animal2 = new Animal("Gos", $ladrar);
 
-
+$animal1->Parlar();
+$animal2->Parlar();
 
 
 
