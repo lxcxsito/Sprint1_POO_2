@@ -1,42 +1,38 @@
 <?php 
 
 //TASK 1 
-class Animal{
-    public string $nom;
-    public Llenguatge $so ;
 
-    public function __construct($nom, Llenguatge $so){
-        $this->nom = $nom;
-        $this->so = $so;
+abstract class Animal {
+    $nom;
+
+    public function __construct ($nom){
+        $this -> nom  = $nom;
     }
 
-       public function Parlar() {
-        echo "El " . $this->nom . " fa " . $this->so->nom . "\n";
+    abstract public function parla();
+
+    public function getNom(){
+        return $this->nom;
     }
+} 
 
-}
-
-
-
-
-class Llenguatge{
-    public $nom;
-    public function __construct($nom){
-        $this->nom = $nom;
+class Gos extends Animal {
+    public function parla() {
+        return "El gos {$this->nom} diu: Bup bup!";
     }
 }
 
-$maullar = new Llenguatge("Maullar");
-$ladrar = new Llenguatge("Ladrar");
+class Gos extends Animal {
+    public function parla() {
+        return "El gos {$this->nom} diu: Bup bup!";
+    }
+}
 
+$gos = new Gos("Boby");
+$gat = new Gat("lUC");
 
-$animal1 = new Animal("Gat", $maullar);
-$animal2 = new Animal("Gos", $ladrar);
-
-$animal1->Parlar();
-$animal2->Parlar();
-
-
+echo $gos->parla() . "<br>";
+echo $gat->parla();
 
 //TASK 2
 
